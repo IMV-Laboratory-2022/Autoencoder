@@ -61,3 +61,4 @@
 
 ---
 https://github.com/aayush9753/ColorIt
+https://colab.research.google.com/drive/1ThJeAvTaq-YejO1vPiCUXFsw4YYq_hAb?usp=sharing
