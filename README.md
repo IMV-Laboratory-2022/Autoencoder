@@ -1,4 +1,4 @@
-<h1 align="center"> Auto Encoder </h1>
+<h1 align="center"> Autoencoder </h1>
 
 <p align="center">
     <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" style="vertical-align:middle">
@@ -8,7 +8,7 @@
 
 ----
 
-# Pengantar Auto Encoder
+# Pengantar Autoencoder
 
 <p align="center">
     <img src="contents/Auto Encoder.png"  width="360" style="vertical-align:middle">
