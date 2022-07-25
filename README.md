@@ -60,5 +60,6 @@
 
 
 ---
-https://github.com/aayush9753/ColorIt
-https://colab.research.google.com/drive/1ThJeAvTaq-YejO1vPiCUXFsw4YYq_hAb?usp=sharing
+- https://github.com/aayush9753/ColorIt
+- https://medium.com/geekculture/u-net-implementation-from-scratch-using-tensorflow-b4342266e406
+- https://colab.research.google.com/drive/1ThJeAvTaq-YejO1vPiCUXFsw4YYq_hAb?usp=sharing
