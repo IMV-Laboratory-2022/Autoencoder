@@ -62,5 +62,5 @@
 ---
 - https://github.com/aayush9753/ColorIt
 - https://medium.com/geekculture/u-net-implementation-from-scratch-using-tensorflow-b4342266e406
-- https://colab.research.google.com/drive/1ThJeAvTaq-YejO1vPiCUXFsw4YYq_hAb?usp=sharing
+- https://colab.research.google.com/drive/1JwPCesJ2J6_QRai99_uDwH0qlHnwEo0U?usp=sharing
 - https://github.com/christianversloot/machine-learning-articles/blob/main/how-to-build-a-u-net-for-image-segmentation-with-tensorflow-and-keras.md
