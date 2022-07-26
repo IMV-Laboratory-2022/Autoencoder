@@ -49,7 +49,7 @@
     <img src="contents/Shadow Removal.png"  width="360" style="vertical-align:middle">
 </p>
 
-# Arsitektur Autoencoder
+# Arsitektur Autoencoder (U-Net)
 
 <p align="center">
     <img src="contents/Arsitektur Auto Encoder.jpg"  width="540" style="vertical-align:middle">
