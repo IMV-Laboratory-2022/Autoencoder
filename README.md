@@ -17,7 +17,7 @@
 - Autoencoder adalah model neural network yang memiliki input dan output yang sama.
 - Autoencoder digunakan untuk mengurangi dimensi dari features (Dimensionality Reduction).
 
-# Implementasi Auto Encoder
+# Implementasi Autoencoder
 
 1. Image Colorization
 
@@ -49,7 +49,7 @@
     <img src="contents/Shadow Removal.png"  width="360" style="vertical-align:middle">
 </p>
 
-# Arsitektur Auto Encoder
+# Arsitektur Autoencoder
 
 <p align="center">
     <img src="contents/Arsitektur Auto Encoder.jpg"  width="540" style="vertical-align:middle">
@@ -58,6 +58,14 @@
 - Encoder: ekstraksi fitur dari gambar dan membuat representasi laten untuk gambar.
 - Decoder: memecahkan kode representasi gambar dan membentuk gambar yang memenuhi kriteria yang diberikan.
 
+U-NET
+
+- https://idiotdeveloper.com/what-is-unet/
+
+# Metriks Autoencoder
+- http://amroamroamro.github.io/mexopencv/opencv/image_similarity_demo.html
+- https://www.tensorflow.org/api_docs/python/tf/image/psnr
+- https://www.tensorflow.org/api_docs/python/tf/image/ssim
 
 ---
 - https://github.com/aayush9753/ColorIt
