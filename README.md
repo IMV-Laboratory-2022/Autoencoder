@@ -51,6 +51,10 @@
 
 # Arsitektur Autoencoder (U-Net)
 
+<p align="center">
+    <img src="contents/U-NET.png"  width="840" style="vertical-align:middle">
+</p>
+
 UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari empat blok encoder dan empat blok decoder yang dihubungkan melalui sebuah jembatan (bridge).
 
 1. Encoder
