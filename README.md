@@ -65,15 +65,15 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    
    Jaringan Encoder terdiri dari beberapa layer sebagai berikut.
    - Convolution (Conv2D): ektraksi ciri (feature extraction).
-     ```
+     ```python
      layers.Conv2D(num_filters, kernel_size, padding)
      ```
    - Batch Normalization: mengurangi pergeseran kovarian atau menyamakan distribusi setiap nilai input yang selalau berubah karena perubahan pada layer sebelumnya selama proses training.
-     ```
+     ```python
      layers.BatchNormalization()
      ```
    - Max Pooling: mengurangi dimensi (downsampling).
-     ```
+     ```python
      layers.MaxPool2D(strides)
      ```
      
@@ -83,13 +83,13 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
      <img src="contents/Relu.png"  width="256" style="vertical-align:middle">
    </p>
    
-   ```
+   ```python
    layers.Activation('relu')
    ```
    
    Dibawah ini merupakan blok encoder.
    
-   ```
+   ```python
    def encoder_block(input, num_filters):
       x = layers.Conv2D(num_filters, 3, padding='same')(input)
       x = layers.BatchNormalization()(x)
@@ -114,7 +114,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    
    Dibawah ini merupakan bridge.
    
-   ```
+   ```python
    def conv_block(input, num_filters):
       x = layers.Conv2D(num_filters, 3, padding='same')(input)
       x = layers.BatchNormalization()(x)
@@ -131,11 +131,11 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
 
    Jaringan Decoder terdiri dari beberapa layer sebagai berikut.
    - Conv2DTranspose: menambah dimensi (up sampling) dan konvolusi.
-     ```
+     ```python
      layers.Conv2DTranspose(num_filters, kernel_size, strides, padding)
      ```
    - Concatenate: menggabungkan 2 array (tensor).
-     ```
+     ```python
      layers.Concatenate()([skip_features, upconv])
      ```
    
@@ -143,7 +143,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    
    Dibawah ini merupakan blok decoder.
    
-   ```
+   ```python
    def decoder_block(input, skip_features, num_filters):
       upconv = layers.Conv2DTranspose(num_filters, 3, strides=(2, 2), padding="same")(input)
       upconv = layers.BatchNormalization()(upconv)
@@ -170,7 +170,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    
    Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel.
    
-   ```
+   ```python
    layers.Conv2D(num_filter/channels, kernel_size, activation='sigmoid', padding='same')
    ```
 
@@ -181,7 +181,7 @@ Pada Autoencoder terdapat beberapa metrik yang dijadikan sebagai parameter dalam
   
   PSNR digunakan untuk memeriksa kesamaan atau perbedaan dua gambar.
   
-  ```
+  ```python
   def psnr(pred, gt):
     return tf.image.psnr(pred, gt, max_val=1.0)
   ```
@@ -190,7 +190,7 @@ Pada Autoencoder terdapat beberapa metrik yang dijadikan sebagai parameter dalam
   
   SSISM digunakan untuk menilai kualitas gambar dari visibilitas kesalahan hingga kesamaan struktural.(Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004))
   
-   ```
+   ```python
    def ssim(pred, gt):
      return tf.image.ssim(pred, gt, max_val=1.0)
    ```
