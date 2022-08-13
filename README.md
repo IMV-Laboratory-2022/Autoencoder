@@ -171,7 +171,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel.
    
    ```python
-   layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channel, kernel_size
+   layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channels RGB (3), kernel_size
    ```
 
 # Evaluasi Model Autoencoder
