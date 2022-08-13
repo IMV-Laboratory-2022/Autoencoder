@@ -87,6 +87,11 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
    layers.Activation('relu')
    ```
    
+   Sebelum jaringan encoder, perlu melakukan input layer. Ukuran input sesuai dengan jumlah fitur pada data input.
+   ```python
+   tf.keras.layers.InputLayer(input_shape=(height, width, color_channels))
+   ```
+   
    Dibawah ini merupakan blok encoder.
    
    ```python
