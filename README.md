@@ -207,10 +207,6 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
      - skip_features → koneksi jalan pintas yang memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. 
      - upconv → berupa Conv2DTranspose
 
-<!--   
-   Skip connection / skip feature memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. Skip connection / skip feature bertindak sebagai koneksi jalan pintas yang membantu aliran gradien yang lebih baik saat back propagation, yang pada gilirannya membantu jaringan untuk mempelajari representasi yang lebih baik.
--->
-
    Dibawah ini merupakan blok decoder.
    
    ```python
