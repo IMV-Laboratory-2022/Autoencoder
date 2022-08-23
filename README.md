@@ -22,7 +22,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
 
 - Image Colorization
   
-  Image Colorization adalah proses pemberian warna dari gambar abu-abu (grayscale).
+  Image Colorization adalah teknik rekonstruksi citra yang bertujuan untuk memberikan warna dari gambar abu-abu (grayscale).
   
   Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
@@ -32,7 +32,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
 
 - Image Denoising
   
-  Image Denoising adalah proses pemulihan gambar bersih dari noise.
+  Image Denoising adalah teknik rekonstruksi citra yang bertujuan untuk pemulihan gambar bersih dari noise.
   
   Paper: [Generative Adaptive Convolutions for Real-World Noisy Image Denoising](https://aaai-2022.virtualchair.net/poster_aaai4230)
 
@@ -42,7 +42,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
 
 - Image Compression
   
-  Image Compression adalah proses untuk meminimalisasi jumlah bit yang merepresentasikan suatu citra sehingga ukuran data citra menjadi lebih kecil.
+  Image Compression adalah teknik rekonstruksi citra yang bertujuan untuk meminimalisasi jumlah bit yang merepresentasikan suatu citra sehingga ukuran data citra menjadi lebih kecil.
   
   Paper: [Towards End-to-End Image Compression and Analysis with Transformers](https://arxiv.org/abs/2112.09300)
 
@@ -52,7 +52,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
 
 - Super Resolution
   
-  Super Resolution adalah proses 
+  Super Resolution adalah teknik rekonstruksi citra yang mampu membangkitkan citra beresolusi tinggi dari sebuah citra beresolusi rendah.
   
   Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
@@ -61,6 +61,8 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
 </p>
 
 - Shadow Removal 
+  
+  Shadow Removal adalah teknik rekonstruksi citra yang bertujuan untuk mendeteksi dan menghilangkan bayangan yang dihasilkan oleh sumber cahaya yang terhalang.
   
   - Paper: [Efficient Model-Driven Network for Shadow Removal](https://aaai-2022.virtualchair.net/poster_aaai196)
 
