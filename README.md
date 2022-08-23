@@ -116,7 +116,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
         - valid → tidak ada padding
         - same → padding nol merata kiri/kanan/atas/bawah
      
-   - Fungsi aktivasi untuk memperkenalkan non-linearitas sehingga dapat secara efisien memetakan pemetaan kompleks non-linear antara input dan output.
+   - Fungsi aktivasi merupakan fungsi yang digunakan pada jaringan saraf untuk mengaktifkan atau tidak mengaktifkan neuron. Karakteristik yang harus dimiliki oleh fungsi aktivasi jaringan backpropagation antara lain harus kontinyu, terdiferensialkan, dan tidak menurun secara monotonis (monotonically non-decreasing).
      <p align="center">
         <img src="contents/Fungsi Aktivasi.gif" width="480" style="vertical-align:left">
      </p>
@@ -173,19 +173,44 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
 3. Decoder
 
    Jaringan Decoder berfungsi untuk secara semantik memproyeksikan fitu diskriminatif (resolusi lebih rendah) yang dipekajari oleh jaringan encoder ke ruang piksel (resolusi lebih tinggi) untuk mendapatkan klasifikasi yang padat. Jaringan Decoder terdiri dari beberapa layer sebagai berikut.
+   
    - Conv2DTranspose berperan untuk upsampling (menambah dimensi) dan menerapkan blok konvolusi.
+     
+     <p align="center">
+        <img src="contents/transp conv.png"  width="540" style="vertical-align:middle">
+     </p>
+     <p align="center">
+        <img src="contents/transposed conv stride 1 pad 0.gif" width="360" style="vertical-align:left">
+        <img src="contents/transposed conv stride 1 pad 1.gif" width="360" style="vertical-align:left">
+     </p>
+     <p align="center">
+        <img src="contents/transposed conv stride 2 pad 0.gif" width="360" style="vertical-align:left">
+        <img src="contents/transposed conv stride 2 pad 1.gif"  width="360" style="vertical-align:left">
+     </p>
      
      ```python
      tf.keras.layers.Conv2DTranspose(num_filters, kernel_size, strides, padding)
      ```
+     - num-filters → jumlah filter output dalam konvolusi → dimensi ruang output
+     - kernel_size → ukuran spasial dari filter (lebar/tinggi)
+     - stride → besar pergeseran filter dalam konvolusi
+     - padding → jumlah penambahan nol pada gambar
+        - valid → tidak ada padding
+        - same → padding nol merata kiri/kanan/atas/bawah
+     
    - Concatenate berperan menggabungkan 2 array (tensor).
      
      ```python
      tf.keras.layers.Concatenate()([skip_features, upconv])
      ```
-   
-   Skip connection / skip feature memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. Skip connection / skip feature bertindak sebaagai koneksi jalan pintas yang membantu aliran gradien yang lebih baik saat back propagation, yang pada gilirannya membantu jaringan untuk mempelajari representasi yang lebih baik.
-   
+     
+     - skip_features → koneksi jalan pintas yang memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. 
+     - upconv → berupa Conv2DTranspose
+
+<!--   
+   Skip connection / skip feature memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. Skip connection / skip feature bertindak sebagai koneksi jalan pintas yang membantu aliran gradien yang lebih baik saat back propagation, yang pada gilirannya membantu jaringan untuk mempelajari representasi yang lebih baik.
+-->
+
    Dibawah ini merupakan blok decoder.
    
    ```python
@@ -204,7 +229,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
       y = layers.BatchNormalization()(y)
       y = layers.Activation('relu')(y)
 
-      return relu
+      return y
    ```
 
 4. Output
@@ -213,10 +238,10 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
     <img src="contents/Conv 1x1.png"  width="256" style="vertical-align:middle">
    </p>
    
-   Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel.
+   Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel. Data yang kita miliki mempunyai rentang dari 0 sampai 1 (sudah ternomalisasi), activation function menggunakan sigmoid yang mempunyai rentang dari 0 sampai 1.
    
    ```python
-   layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channels RGB (3), kernel_size
+   tf.keras.layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channels RGB (3), kernel_size, activation, padding
    ```
 
 # Evaluasi Model Autoencoder
