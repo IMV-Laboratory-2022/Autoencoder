@@ -14,36 +14,55 @@
     <img src="contents/Auto Encoder.png"  width="360" style="vertical-align:middle">
 </p>
 
-- Autoencoder adalah model neural network yang memiliki input dan output yang sama.
-- Autoencoder digunakan untuk mengurangi dimensi dari features (Dimensionality Reduction).
+Autoencoder adalah jenis jaringan saraf khusus yang dilatih untuk menyalin inputnya ke outputnya. Misalnya, diberikan gambar digit tulisan tangan, autoencoder pertama-tama mengkodekan gambar menjadi representasi laten dimensi yang lebih rendah (downsampling), kemudian menerjemahkan representasi laten kembali ke gambar (upsampling). Autoencoder belajar mengompresi data sambil meminimalkan kesalahan rekonstruksi.
+
+Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk membaca bab 14 dari [Deep Learning](https://www.deeplearningbook.org/) oleh Ian Goodfellow, Yoshua Bengio, dan Aaron Courville.
 
 # Implementasi Autoencoder
 
-1. Image Colorization
+- Image Colorization
+  
+  Image Colorization adalah proses pemberian warna dari gambar abu-abu (grayscale).
+  
+  Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
     <img src="contents/Image Colorization.png"  width="360" style="vertical-align:middle">
 </p>
 
-2. Image Denoising
+- Image Denoising
+  
+  Image Denoising adalah proses pemulihan gambar bersih dari noise.
+  
+  Paper: [Generative Adaptive Convolutions for Real-World Noisy Image Denoising](https://aaai-2022.virtualchair.net/poster_aaai4230)
 
 <p align="center">
     <img src="contents/Image Denoising.png"  width="360" style="vertical-align:middle">
 </p>
 
-3. Image Compression
+- Image Compression
+  
+  Image Compression adalah proses untuk meminimalisasi jumlah bit yang merepresentasikan suatu citra sehingga ukuran data citra menjadi lebih kecil.
+  
+  Paper: [Towards End-to-End Image Compression and Analysis with Transformers](https://arxiv.org/abs/2112.09300)
 
 <p align="center">
     <img src="contents/Image Compression.png"  width="360" style="vertical-align:middle">
 </p>
 
-4. Super Resolution
+- Super Resolution
+  
+  Super Resolution adalah proses 
+  
+  Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
     <img src="contents/Super Resolution.png"  width="360" style="vertical-align:middle">
 </p>
 
-5. Shadow Removal 
+- Shadow Removal 
+  
+  - Paper: [Efficient Model-Driven Network for Shadow Removal](https://aaai-2022.virtualchair.net/poster_aaai196)
 
 <p align="center">
     <img src="contents/Shadow Removal.png"  width="360" style="vertical-align:middle">
