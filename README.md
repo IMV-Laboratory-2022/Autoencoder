@@ -27,7 +27,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
-    <img src="contents/Image Colorization.png"  width="360" style="vertical-align:middle">
+    <img src="contents/Image Colorization.png"  width="480" style="vertical-align:middle">
 </p>
 
 - Image Denoising
@@ -37,7 +37,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   Paper: [Generative Adaptive Convolutions for Real-World Noisy Image Denoising](https://aaai-2022.virtualchair.net/poster_aaai4230)
 
 <p align="center">
-    <img src="contents/Image Denoising.png"  width="360" style="vertical-align:middle">
+    <img src="contents/Image Denoising.png"  width="480" style="vertical-align:middle">
 </p>
 
 - Image Compression
@@ -47,7 +47,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   Paper: [Towards End-to-End Image Compression and Analysis with Transformers](https://arxiv.org/abs/2112.09300)
 
 <p align="center">
-    <img src="contents/Image Compression.png"  width="360" style="vertical-align:middle">
+    <img src="contents/Image Compression.jpg"  width="580" style="vertical-align:middle">
 </p>
 
 - Super Resolution
@@ -57,7 +57,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
-    <img src="contents/Super Resolution.png"  width="360" style="vertical-align:middle">
+    <img src="contents/Super Resolution.png"  width="480" style="vertical-align:middle">
 </p>
 
 - Shadow Removal 
@@ -67,7 +67,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   - Paper: [Efficient Model-Driven Network for Shadow Removal](https://aaai-2022.virtualchair.net/poster_aaai196)
 
 <p align="center">
-    <img src="contents/Shadow Removal.png"  width="360" style="vertical-align:middle">
+    <img src="contents/Shadow Removal.jpg"  width="480" style="vertical-align:middle">
 </p>
 
 # Arsitektur Autoencoder (U-Net)
