@@ -14,36 +14,55 @@
     <img src="contents/Auto Encoder.png"  width="360" style="vertical-align:middle">
 </p>
 
-- Autoencoder adalah model neural network yang memiliki input dan output yang sama.
-- Autoencoder digunakan untuk mengurangi dimensi dari features (Dimensionality Reduction).
+Autoencoder adalah jenis jaringan saraf khusus yang dilatih untuk menyalin inputnya ke outputnya. Misalnya, diberikan gambar digit tulisan tangan, autoencoder pertama-tama mengkodekan gambar menjadi representasi laten dimensi yang lebih rendah (downsampling), kemudian menerjemahkan representasi laten kembali ke gambar (upsampling). Autoencoder belajar mengompresi data sambil meminimalkan kesalahan rekonstruksi.
+
+Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk membaca bab 14 dari [Deep Learning](https://www.deeplearningbook.org/) oleh Ian Goodfellow, Yoshua Bengio, dan Aaron Courville.
 
 # Implementasi Autoencoder
 
-1. Image Colorization
+- Image Colorization
+  
+  Image Colorization adalah proses pemberian warna dari gambar abu-abu (grayscale).
+  
+  Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
     <img src="contents/Image Colorization.png"  width="360" style="vertical-align:middle">
 </p>
 
-2. Image Denoising
+- Image Denoising
+  
+  Image Denoising adalah proses pemulihan gambar bersih dari noise.
+  
+  Paper: [Generative Adaptive Convolutions for Real-World Noisy Image Denoising](https://aaai-2022.virtualchair.net/poster_aaai4230)
 
 <p align="center">
     <img src="contents/Image Denoising.png"  width="360" style="vertical-align:middle">
 </p>
 
-3. Image Compression
+- Image Compression
+  
+  Image Compression adalah proses untuk meminimalisasi jumlah bit yang merepresentasikan suatu citra sehingga ukuran data citra menjadi lebih kecil.
+  
+  Paper: [Towards End-to-End Image Compression and Analysis with Transformers](https://arxiv.org/abs/2112.09300)
 
 <p align="center">
     <img src="contents/Image Compression.png"  width="360" style="vertical-align:middle">
 </p>
 
-4. Super Resolution
+- Super Resolution
+  
+  Super Resolution adalah proses 
+  
+  Paper: [SCSNet: An Efficient Paradigm for Learning Simultaneously Image Colorization and Super-Resolution](https://aaai-2022.virtualchair.net/poster_aaai528)
 
 <p align="center">
     <img src="contents/Super Resolution.png"  width="360" style="vertical-align:middle">
 </p>
 
-5. Shadow Removal 
+- Shadow Removal 
+  
+  - Paper: [Efficient Model-Driven Network for Shadow Removal](https://aaai-2022.virtualchair.net/poster_aaai196)
 
 <p align="center">
     <img src="contents/Shadow Removal.png"  width="360" style="vertical-align:middle">
@@ -58,53 +77,95 @@
 UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari empat blok encoder dan empat blok decoder yang dihubungkan melalui sebuah jembatan (bridge).
 
 1. Encoder
-
-   | Convolution (Conv2D) | Max Pooling |
-   | ---                  | ---         |
-   |<img src="contents/Conv Block.png">|<img src="contents/Max Pool.png">|
    
-   Jaringan Encoder terdiri dari beberapa layer sebagai berikut.
-   - Convolution (Conv2D): ektraksi ciri (feature extraction).
+   Jaringan encoder menerapkan blok konvolusi diikuti dengan downsampling (memperkecil dimensi) dengan maxpool. Jaringan encoder terdiri dari beberapa layer sebagai berikut.
+   
+   - Convolution layer adalah proses konvolusi citra input dengan filter yang menghasilkan `feature map`.
+   
+     <p align="center">
+        <img src="contents/conv.png"  width="540" style="vertical-align:middle">
+     </p>
+     <p align="center">
+        <img src="contents/conv stride 1 pad 0.gif" alt="convolution" width="360" style="vertical-align:left">
+        <img src="contents/conv stride 1 pad 1.gif" alt="convolution" width="360" style="vertical-align:left">
+     </p>
+     <p align="center">
+        <img src="contents/conv stride 2 pad 0.gif" alt="convolution" width="360" style="vertical-align:left">
+        <img src="contents/conv stride 2 pad 1.gif" alt="convolution" width="360" style="vertical-align:left">
+     </p>
+     
      ```python
-     layers.Conv2D(num_filters, kernel_size, padding)
-     ```
-   - Batch Normalization: mengurangi pergeseran kovarian atau menyamakan distribusi setiap nilai input yang selalau berubah karena perubahan pada layer sebelumnya selama proses training.
-     ```python
-     layers.BatchNormalization()
-     ```
-   - Max Pooling: mengurangi dimensi (downsampling).
-     ```python
-     layers.MaxPool2D(strides)
+     tf.keras.layers.Conv2D(num_filters, kernel_size, strides, padding)
      ```
      
-   Fungsi aktivasi ReLU (non-linearitas) membantu dalam generalisasi yang lebih baik dari data pelatihan. Karena membuat pembatas pada bilangan nol, artinya apabila x ≤ 0 maka x = 0 dan apabila x > 0 maka x = x.
+     - num-filters → jumlah filter output dalam konvolusi → dimensi ruang output
+     - kernel_size → ukuran spasial dari filter (lebar/tinggi)
+     - stride → besar pergeseran filter dalam konvolusi
+     - padding → jumlah penambahan nol pada gambar
+        - valid → tidak ada padding
+        - same → padding nol merata kiri/kanan/atas/bawah
+    
+   - Batch Normalization berperan untuk mengurangi pergeseran kovarian atau menyamakan distribusi setiap nilai input yang selalau berubah karena perubahan pada layer sebelumnya selama proses training.
+
+     <p align="center">
+         <img src="contents/batchnorm.png" width="480" style="vertical-align:left">
+     </p>
+
+     ```python
+     tf.keras.layers.BatchNormalization()
+     ```
+     
+   - Pooling layer berperan untuk memperkecil dimensi feature image (downsampling) dan menyimpan informasi penting.
+     
+     <p align="center">
+        <img src="contents/max pol stride 1 pad 1.gif" alt="convolution" width="360" style="vertical-align:left">
+        <img src="contents/max pol stride 2 pad 1.gif" alt="convolution" width="360" style="vertical-align:left">
+     </p>
+
+     ```python
+     tf.keras.layers.MaxPool2D(
+        pool_size=(2, 2),
+        strides=None,
+        padding='valid',
+     )
+     ```
+     - pool_size → ukuran pool
+     - strides → besar pergeseran
+     - padding → jumlah penambahan nol pada gambar
+        - valid → tidak ada padding
+        - same → padding nol merata kiri/kanan/atas/bawah
+     
+   - Fungsi aktivasi merupakan fungsi yang digunakan pada jaringan saraf untuk mengaktifkan atau tidak mengaktifkan neuron. Karakteristik yang harus dimiliki oleh fungsi aktivasi jaringan backpropagation antara lain harus kontinyu, terdiferensialkan, dan tidak menurun secara monotonis (monotonically non-decreasing).
+     <p align="center">
+        <img src="contents/Fungsi Aktivasi.gif" width="480" style="vertical-align:left">
+     </p>
    
-   <p align="center">
-     <img src="contents/Relu.png"  width="256" style="vertical-align:middle">
-   </p>
-   
-   ```python
-   layers.Activation('relu')
-   ```
-   
+     ```python
+     tf.keras.layers.Activation(activation)
+     ```
+     
+     - activation → fungsi aktivasi 
+      
    Sebelum jaringan encoder, perlu melakukan input layer. Ukuran input sesuai dengan jumlah fitur pada data input.
+   
    ```python
    tf.keras.layers.InputLayer(input_shape=(height, width, color_channels))
    ```
+   - input_shape → input gambar
    
    Dibawah ini merupakan blok encoder.
    
    ```python
    def encoder_block(input, num_filters):
-      x = layers.Conv2D(num_filters, 3, padding='same')(input)
-      x = layers.BatchNormalization()(x)
-      x = layers.Activation('relu')(x)
+      x = tf.keras.layers.Conv2D(num_filters, 3, padding='same')(input)
+      x = tf.keras.layers.BatchNormalization()(x)
+      x = tf.keras.layers.Activation('relu')(x)
 
-      x = layers.Conv2D(num_filters, 3, padding='same')(x)
-      x = layers.BatchNormalization()(x)
-      x = layers.Activation('relu')(x)
+      x = tf.keras.layers.Conv2D(num_filters, 3, padding='same')(x)
+      x = tf.keras.layers.BatchNormalization()(x)
+      x = tf.keras.layers.Activation('relu')(x)
 
-      p = layers.MaxPool2D(2, 2)(x)
+      p = tf.keras.layers.MaxPool2D(2, 2)(x)
 
       return x, p
    ```
@@ -112,40 +173,59 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
 
 2. Bridge
    <p align="center">
-    <img src="contents/Bridge.png"  width="256" style="vertical-align:middle">
+        <img src="contents/Bridge.png"  width="256" style="vertical-align:middle">
    </p>
 
-   Jembatan menghubungkan encoder dan jaringan decoder dan melengkapi aliran informasi.
+   Bridge menghubungkan encoder dan jaringan decoder dan melengkapi aliran informasi.
    
    Dibawah ini merupakan bridge.
    
    ```python
    def conv_block(input, num_filters):
-      x = layers.Conv2D(num_filters, 3, padding='same')(input)
-      x = layers.BatchNormalization()(x)
-      x = layers.Activation('relu')(x)
+      x = tf.keras.layers.Conv2D(num_filters, 3, padding='same')(input)
+      x = tf.keras.layers.layers.BatchNormalization()(x)
+      x = tf.keras.layers.layers.Activation('relu')(x)
 
       return x
    ```
 
 3. Decoder
 
-   | Conv2DTranspose | Concatenate |
-   | ---                  | ---         |
-   |<img src="contents/Up Conv.png">|<img src="contents/Concatenate.png">|
+   Jaringan Decoder berfungsi untuk secara semantik memproyeksikan fitu diskriminatif (resolusi lebih rendah) yang dipekajari oleh jaringan encoder ke ruang piksel (resolusi lebih tinggi) untuk mendapatkan klasifikasi yang padat. Jaringan Decoder terdiri dari beberapa layer sebagai berikut.
+   
+   - Conv2DTranspose berperan untuk upsampling (menambah dimensi) dan menerapkan blok konvolusi.
+     
+     <p align="center">
+        <img src="contents/transp conv.png"  width="540" style="vertical-align:middle">
+     </p>
+     <p align="center">
+        <img src="contents/transposed conv stride 1 pad 0.gif" width="360" style="vertical-align:left">
+        <img src="contents/transposed conv stride 1 pad 1.gif" width="360" style="vertical-align:left">
+     </p>
+     <p align="center">
+        <img src="contents/transposed conv stride 2 pad 0.gif" width="360" style="vertical-align:left">
+        <img src="contents/transposed conv stride 2 pad 1.gif"  width="360" style="vertical-align:left">
+     </p>
+     
+     ```python
+     tf.keras.layers.Conv2DTranspose(num_filters, kernel_size, strides, padding)
+     ```
+     - num-filters → jumlah filter output dalam konvolusi → dimensi ruang output
+     - kernel_size → ukuran spasial dari filter (lebar/tinggi)
+     - stride → besar pergeseran filter dalam konvolusi
+     - padding → jumlah penambahan nol pada gambar
+        - valid → tidak ada padding
+        - same → padding nol merata kiri/kanan/atas/bawah
+     
+   - Concatenate berperan menggabungkan 2 array (tensor).
+     
+     ```python
+     tf.keras.layers.Concatenate()([skip_features, upconv])
+     ```
+     
+     - skip_features → koneksi jalan pintas yang memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. 
+     - upconv → berupa Conv2DTranspose
 
-   Jaringan Decoder terdiri dari beberapa layer sebagai berikut.
-   - Conv2DTranspose: menambah dimensi (up sampling) dan konvolusi.
-     ```python
-     layers.Conv2DTranspose(num_filters, kernel_size, strides, padding)
-     ```
-   - Concatenate: menggabungkan 2 array (tensor).
-     ```python
-     layers.Concatenate()([skip_features, upconv])
-     ```
-   
-   Skip connection / skip feature memberikan informasi tambahan yang membantu dekoder menghasilkan fitur output yang lebih baik. Skip connection / skip feature bertindak sebaagai koneksi jalan pintas yang membantu aliran gradien yang lebih baik saat back propagation, yang pada gilirannya membantu jaringan untuk mempelajari representasi yang lebih baik.
-   
    Dibawah ini merupakan blok decoder.
    
    ```python
@@ -164,7 +244,7 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
       y = layers.BatchNormalization()(y)
       y = layers.Activation('relu')(y)
 
-      return relu
+      return y
    ```
 
 4. Output
@@ -173,10 +253,10 @@ UNET adalah arsitektur jaringan encoder-decoder berbentuk U, yang terdiri dari e
     <img src="contents/Conv 1x1.png"  width="256" style="vertical-align:middle">
    </p>
    
-   Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel.
+   Output dari decoder terakhir melewati konvolusi 1x1 dengan aktivasi sigmoid. Fungsi aktivasi sigmoid memberikan topeng segmentasi yang mewakili klasifikasi berdasarkan piksel. Data yang kita miliki mempunyai rentang dari 0 sampai 1 (sudah ternomalisasi), activation function menggunakan sigmoid yang mempunyai rentang dari 0 sampai 1.
    
    ```python
-   layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channels RGB (3), kernel_size
+   tf.keras.layers.Conv2D(3, 1, activation='sigmoid', padding='same') # channels RGB (3), kernel_size, activation, padding
    ```
 
 # Evaluasi Model Autoencoder
