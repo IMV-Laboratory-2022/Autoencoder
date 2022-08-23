@@ -67,7 +67,7 @@ Untuk mempelajari lebih lanjut tentang autoencoder, harap pertimbangkan untuk me
   - Paper: [Efficient Model-Driven Network for Shadow Removal](https://aaai-2022.virtualchair.net/poster_aaai196)
 
 <p align="center">
-    <img src="contents/Shadow Removal.jpg"  width="480" style="vertical-align:middle">
+    <img src="contents/Shadow Removal.png"  width="480" style="vertical-align:middle">
 </p>
 
 # Arsitektur Autoencoder (U-Net)
