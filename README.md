@@ -284,12 +284,15 @@ Pada Autoencoder terdapat beberapa metrik yang dijadikan sebagai parameter dalam
 
 
 ---
+
+Code:
+- https://colab.research.google.com/drive/1_X3bvVTqXenRf-7Uz6lLxc3dOuDmxzd7?usp=sharing
+
 Referensi:
 - https://github.com/aayush9753/ColorIt
+- https://github.com/ZIYU-DEEP/Awesome-Autoencoders-for-Representation-Learning
 - https://medium.com/geekculture/u-net-implementation-from-scratch-using-tensorflow-b4342266e406
-- https://colab.research.google.com/drive/1_X3bvVTqXenRf-7Uz6lLxc3dOuDmxzd7?usp=sharing
 - https://github.com/christianversloot/machine-learning-articles/blob/main/how-to-build-a-u-net-for-image-segmentation-with-tensorflow-and-keras.md
-- https://idiotdeveloper.com/unet-implementation-in-tensorflow-using-keras-api/
 - https://idiotdeveloper.com/what-is-unet/
 - http://amroamroamro.github.io/mexopencv/opencv/image_similarity_demo.html
 - https://www.tensorflow.org/api_docs/python/tf/image/psnr
