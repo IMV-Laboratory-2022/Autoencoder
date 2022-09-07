@@ -266,17 +266,17 @@ Pada Autoencoder terdapat beberapa metrik yang dijadikan sebagai parameter dalam
 
 - PSNR (Peak Signal-to-Noise Ratio)
   
-  PSNR digunakan untuk memeriksa kesamaan atau perbedaan dua gambar.
+  PSNR merupakan parameter kinerja untuk mengetahui seberapa tinggi perbaikan kejernihan citra terhadap noise dalam dB.
   
   ```python
   def psnr(pred, gt):
     return tf.image.psnr(pred, gt, max_val=1.0)
   ```
 
-- SSIM
+- SSIM (Structural Similarity)
   
-  SSISM digunakan untuk menilai kualitas gambar dari visibilitas kesalahan hingga kesamaan struktural.(Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004))
-  
+  SSIM merupakan parameter kinerja untuk mengetahui seberapa tinggi tingkat kemiripan stru
+ktur antara citra hasil perbikan dengan citra ground-truth  
    ```python
    def ssim(pred, gt):
      return tf.image.ssim(pred, gt, max_val=1.0)
