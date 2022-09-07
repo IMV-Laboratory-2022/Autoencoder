@@ -276,7 +276,7 @@ Pada Autoencoder terdapat beberapa metrik yang dijadikan sebagai parameter dalam
 - SSIM (Structural Similarity)
   
   SSIM merupakan parameter kinerja untuk mengetahui seberapa tinggi tingkat kemiripan stru
-ktur antara citra hasil perbikan dengan citra ground-truth  
+ktur antara citra hasil perbikan dengan citra ground-truth.
    ```python
    def ssim(pred, gt):
      return tf.image.ssim(pred, gt, max_val=1.0)
