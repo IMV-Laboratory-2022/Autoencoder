@@ -4,7 +4,7 @@ Folder ini berisi contoh REST API yang dibuat menggunakan Flask untuk mengekspos
 
 ## Requirements
  
-"Requirements File" adalah file yang mencantumkan item yang akan diinstal. Instal dengan:
+"Requirements File" adalah file yang mencantumkan library yang akan diinstal. Instal dengan:
 
 ```shell
 $ pip install -r requirements.txt
