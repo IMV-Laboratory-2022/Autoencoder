@@ -1,4 +1,9 @@
 # Flask REST API
+
+<p align="center">
+    <img src="https://miro.medium.com/max/828/1*FE2SydD7QgbvNqtKT7WVSA.gif"  width="640" style="vertical-align:middle">
+</p>
+
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) [API](https://en.wikipedia.org/wiki/API)s biasanya digunakan untuk mengekspos model Machine Learning (ML) ke layanan lain.
 Folder ini berisi contoh REST API yang dibuat menggunakan Flask untuk mengekspos model autoendoer dari tensorflow.
 
