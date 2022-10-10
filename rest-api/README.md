@@ -12,7 +12,7 @@ Folder ini berisi contoh REST API yang dibuat menggunakan Flask untuk mengekspos
 "Requirements File" adalah file yang mencantumkan library yang akan diinstal. Instal dengan:
 
 ```shell
-$ pip install -r requirements.txt
+   pip install -r requirements.txt
 ```
 
 ## Run
@@ -20,7 +20,7 @@ $ pip install -r requirements.txt
 Jalankan REST API menggunakan perintah:
 
 ```shell
-$ python restapi.py
+   python restapi.py
 ```
 
 ## REST API
