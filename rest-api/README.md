@@ -120,7 +120,7 @@ Anda dapat mendemonstrasikan di [POSTMAN](https://www.postman.com/) untuk mendap
     <img src="https://user-images.githubusercontent.com/72246401/195254111-0888f246-6c77-43e8-8f95-d19095f04dc7.png"  width="640" style="vertical-align:middle">
 </p>
 
-7. Seperti yang Anda lihat pada gambar di atas, status 201 diterima yang menyiratkan bahwa permintaan berhasil dan sumber daya telah dibuat. Informasi lebih lanjut terkait dengan panggilan API dapat ditemukan di bawah "Header".
+7. Seperti yang Anda lihat pada gambar di bawah, status 201 diterima yang menyiratkan bahwa permintaan berhasil dan sumber daya telah dibuat. Informasi lebih lanjut terkait dengan panggilan API dapat ditemukan di bawah "Header".
 <p align="center">
     <img src="https://user-images.githubusercontent.com/72246401/195254450-9eae9ed0-6df2-4fb9-b80a-9df3debd73ac.png"  width="640" style="vertical-align:middle">
 </p>
