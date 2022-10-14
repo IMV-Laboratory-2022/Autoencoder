@@ -40,17 +40,52 @@ Anaconda berfungsi membuat virtual environment untuk aplikasi yang dibuat menggu
 1. Buka Anaconda Navigator.
 2. Pilih "Environment" di sisi kiri.
 
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195831908-812f1240-754b-4f90-98ab-f9c428fafdd3.png" width="640" style="vertical-align:middle">
+</p>
+
 3. Pilih "Create" di bagian bawah
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195832152-82923bc4-9596-4293-9b71-ac37ebde5d9a.png" width="640" style="vertical-align:middle">
+</p>
+
 4. Dalam munculan:
    - Beri nama: autoencoder
    - Pilih python versi 3.8
    - Tekan "Create" (NB: Ini mungkin memakan waktu cukup lama karena perlu mengunduh Python)
 
-```python
-git clone https://github.com/ultralytics/yolov5  # clone
-cd yolov5
-pip install -r requirements.txt  # install
-```
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195832521-1899fafe-482c-433d-8338-f943fecc1f4d.png" width="640" style="vertical-align:middle">
+</p>
+
+**Memasuki Virtual Environment Anda**
+Untuk memasuki virtual environment:
+
+1. Buka Anaconda Navigator.
+2. Pilih "Environment" di sisi kiri.
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195831908-812f1240-754b-4f90-98ab-f9c428fafdd3.png" width="640" style="vertical-align:middle">
+</p>
+
+3. Tekan panah ">" di sebelah environment **autoencoder** Anda dan pilih "Open Terminal"
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195833440-1204a8ae-0f9b-4d1a-8340-a68741a5dab4.png" width="640" style="vertical-align:middle">
+</p>
+
+**Terminal Environment**
+
+1. Terdapat beberapa library python yang diperlukan seperti.
+   - flask
+   - tensorflow-cpu
+   - numpy
+   - uuid
+   - os
+
+2. Kemudian terdapat dua opsi dengan `pip install <nama-library>` atau dengan `pip install -r requirements.txt`. Untuk requirements.txt bisa di download [disini](https://github.com/IMV-Laboratory-2022/Autoencoder/blob/main/rest-api/install/requirements.txt).
+
 
 2. POSTMAN
 
