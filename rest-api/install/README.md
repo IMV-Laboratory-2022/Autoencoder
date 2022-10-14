@@ -97,3 +97,11 @@ B. POSTMAN
 </p>
 
 [Postman](https://www.postman.com/) adalah alat yang dapat digunakan untuk Pengujian API. Apabila Anda ingin mendownload Postman dapat [disini](https://www.postman.com/downloads/).
+
+*[Instalasi Postman di Windows](https://github.com/postmanlabs/postman-docs/blob/develop/src/pages/docs/getting-started/installation-and-updates.md)*
+
+Postman tersedia untuk Windows 7 dan yang lebih baru.
+
+1. [Unduh](https://www.postman.com/downloads/) versi Postman terbaru.
+2. Pilih dan jalankan file .exe untuk menginstal Postman.
+> Postman v9.4 adalah versi terakhir dari Postman yang mendukung Windows 32-bit dan 64-bit. Semua versi Postman setelah v9.4 hanya akan bekerja pada Windows 64-bit. Anda dapat terus menggunakan Postman v9.4 dan sebelumnya pada Windows 32-bit.
