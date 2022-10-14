@@ -2,7 +2,7 @@
 
 Sebelum menjalankan training melalui supercomputer/google colabs, apabila ingin menjalankan model yang sudah ditraining memerlukan instalasi beberapa aplikasi dan library python.
 
-1. Anaconda
+A. Anaconda
 
 Anaconda berfungsi membuat virtual environment untuk aplikasi yang dibuat menggunakan Python. Virtual environment ini akan menampung semua dependencies/library yang dibutuhkan pada aplikasi Python.
 
@@ -86,8 +86,11 @@ Untuk memasuki virtual environment:
 
 2. Kemudian terdapat dua opsi dengan `pip install <nama-library>` atau dengan `pip install -r requirements.txt`. Untuk requirements.txt bisa di download [disini](https://github.com/IMV-Laboratory-2022/Autoencoder/blob/main/rest-api/install/requirements.txt).
 
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/72246401/195835056-dc41c978-0271-48fa-8d2c-c6c5d250ced9.png" width="640" style="vertical-align:middle">
+</p>
 
-2. POSTMAN
+B. POSTMAN
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/72246401/195249800-77a2bedf-6be6-4b8b-861f-526d9dd1f052.png"  width="640" style="vertical-align:middle">
